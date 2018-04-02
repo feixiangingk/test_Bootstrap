@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="创建元素" id="btn"/>
+<div id="d"></div>
+<script>
+    var d=document.getElementById("d");
+    var btn=document.getElementById("btn");
+    btn.onclick= function () {
+        for(var i=0;i<10;i++){
+        d.innerHTML +="<input type='text' value='8888'><br/>";
+        }
+    }
+    </script>
+</body>
+</html>
