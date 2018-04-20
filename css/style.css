@@ -1,0 +1,29 @@
+.block{
+	width: 50px;
+	height: 50px;
+	background-color: darkblue;
+}
+
+.drop{
+	width: 50px;
+	height: 50px;
+	border: 1px dashed black;
+	opacity: 0.5;
+}
+.droppable-active{
+	border: 1px solid red;
+}
+
+.droppable-hover{
+	background-color: chartreuse;
+}
+
+li{
+	background-color: #eee;
+	margin: 10px;
+	list-style-type: none;
+}
+
+.ui-selected{
+	background-color: red;
+}
