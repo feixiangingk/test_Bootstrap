@@ -50,19 +50,40 @@
 	
 	<!--列嵌套-->
 	<div class="row">
-		<div class="col-md-8">
-			<div class="row">
-				<div class="col-xs-6">col-xs-6</div>
-				<div class="col-xs-6">col-xs-6</div>
-			</div>
-		</div>
-		<div class="col-md-4">col-md-4</div>
-	</div>
+  <div class="col-sm-9">
+    Level 1: .col-sm-9
+    <div class="row">
+      <div class="col-xs-8 col-sm-6">
+        Level 2: .col-xs-8 .col-sm-6
+      </div>
+      <div class="col-xs-4 col-sm-6">
+        Level 2: .col-xs-4 .col-sm-6
+      </div>
+    </div>
+  </div>
+</div>
 	
 	<!--列的排序-->
 	<div class="row">
 		<div class="col-md-2 col-md-push-1">md-2右移一格</div>
 		<div class="col-md-2 col-md-push-2">md-2右移2格</div>
+	</div>
+	
+	<hr>
+	<!--跨设备组合-->
+	<div class="row">
+		<div class="col-md-8 col-xs-6 col-sm-3">跨设备区块1</div>
+		<div class="col-md-4 col-xs-6 col-sm-9">跨设备区块2</div>
+	</div>
+	
+	<hr>
+	<!--清除浮动-->
+	<div class="row">
+		<div class="col-xs-6 col-sm-3">col-xs-6 col-sm-3 1<br/>dfffffs</div>
+		<div class="col-xs-6 col-sm-3">col-xs-6 col-sm-3 2</div>
+		<div class="clearfix visible-xs"></div>
+		<div class="col-xs-6 col-sm-3">col-xs-6 col-sm-3 3</div>
+		<div class="col-xs-6 col-sm-3">col-xs-6 col-sm-3 4</div>
 	</div>
 </div>	
 	</body>
