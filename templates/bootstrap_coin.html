@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width" />
+		<title></title>
+		<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/spacelab/bootstrap.min.css" rel="stylesheet" />
+	</head>
+<body>
+	<!--
+        	作者：feixiangingk@163.com
+        	时间：2018-05-08
+        	描述：添加小图标
+        	1.首先在最上层添加has-feedback
+        	2.在input后面新增一个span标签
+        	3.span的样式选择图标的样式，在bootstrap中文网上找，然后一定记得
+        	4.给span一定记得增加样式 form-control-feedback
+        -->
+	<div class="container">
+		<form class="form-horizontal">
+			<div class="form-group has-success has-feedback">
+				<label class="control-label" for="inputSuccess2">Input with success</label>
+				<input type="text" class="form-control" id="inputSuccess2" aria-describedby="inputSuccess2Status">
+				<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+				<span id="inputSuccess2Status" class="sr-only">(success)</span>
+			</div>
+			<div class="form-group has-warning has-feedback">
+				<label class="control-label" for="inputWarning2">Input with warning</label>
+				<input type="text" class="form-control" id="inputWarning2" aria-describedby="inputWarning2Status">
+				<span class="glyphicon glyphicon-warning-sign form-control-feedback" aria-hidden="true"></span>
+				<span id="inputWarning2Status" class="sr-only">(warning)</span>
+			</div>
+			<div class="form-group has-error has-feedback">
+				<label class="control-label" for="inputError2">Input with error</label>
+				<input type="text" class="form-control" id="inputError2" aria-describedby="inputError2Status">
+				<span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+				<span id="inputError2Status" class="sr-only">(error)</span>
+			</div>
+			
+			<div class="form-group has-success has-feedback">
+				<label class="control-label" for="inputGroupSuccess1">Input group with success</label>
+				<div class="input-group">
+					<span class="input-group-addon">input args:</span>
+					<input type="text" class="form-control" id="inputGroupSuccess1" aria-describedby="inputGroupSuccess1Status">
+				</div>
+				<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+				<span id="inputGroupSuccess1Status" class="sr-only">(success)</span>
+			</div>
+
+			<h3>控件大小调整(row 标签内用form-control占满div)</h3>
+				<div class="row">
+					<div class="col-xs-2">
+						<input type="text" class="form-control" placeholder=".col-xs-2">
+					</div>
+					<div class="col-xs-3">
+						<input type="text" class="form-control" placeholder=".col-xs-3">
+					</div>
+					<div class="col-xs-4">
+						<input type="text" class="form-control" placeholder=".col-xs-4">
+					</div>
+				</div>
+								<span class="help-block">帮助文本使用样式help-block</span>
+		</form>
+	</div>
+</body>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</html>

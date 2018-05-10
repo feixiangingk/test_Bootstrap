@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width" />
+		<title></title>
+		<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/spacelab/bootstrap.min.css" rel="stylesheet" />
+	</head>
+	<body>
+		<!--列表-->
+		<div class="container">
+			<ul>
+				<li>中国</li>
+				<li>美国</li>
+				<li>英国</li>
+			</ul>
+			<hr />
+			<!--有序列表-->
+			<ol>
+				<li>中国</li>
+				<li>美国</li>
+				<li>英国</li>
+			</ol>
+			
+			<!--列表样式取消-->
+			<ol class="list-unstyled">
+				<li>中国</li>
+				<li>美国</li>
+				<li>英国</li>
+			</ol>
+			
+			<!--超链接-->
+			<ul class="list-inline">
+				<li><a href="#">中国</a></li>
+				<li><a href="#">美国</a></li>
+				<li><a href="#">英国</a></li>
+			</ul>
+			
+			<br />
+			<!--带有描述的短语列表-->
+			<dl class="dl-horizontal">
+  				<dt>Description lists</dt>
+  				<dd>A description list is perfect for defining terms.</dd>
+				<dt>Euismod</dt>
+				<dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.
+Donec id elit non mi porta gravida at eget metus.</dd>
+			</dl>
+			
+			<br />
+			
+			<!--内联代码-->
+			<p>For example, <code>from apps.Fund.scripts.script_director import get_Script_OBJ</code> should be wrapped as inline.</p>
+				
+			<!--用户输入的代码-->
+			<p>To switch directories, type <kbd>alt + f</kbd> followed by the name of the directory.<br>
+To edit settings, press <kbd><kbd>ctrl</kbd> + <kbd>,</kbd></kbd></p>
+
+			<!--整段代码-->
+			<pre class="pre-scrollable">
+			def get_assertKeys(self,interface_yaml,dataRow_by_index):
+    			assert_list=self.interface_yaml.get("response_assert")
+    			assert_dict={}
+    			for assert_key in assert_list:
+        			if dataRow_by_index.has_key(assert_key):
+           				assert_dict[assert_key]=dataRow_by_index.get(assert_key,None)
+    			return assert_dict</pre>
+        <!--代码输出-->
+        <samp>INFO| 2018-05-04 10:08:12,943 |Initialization.__init__ | has complate!<br/>
+INFO| 2018-05-04 10:08:12,944 | main | ZT@Interface exec mode is case_mode:testSuite3 mail_mode:mailMode1 ,Details are configur
+ed in global.yaml
+</samp>
+
+	</div>
+	</body>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</html>
