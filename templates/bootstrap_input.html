@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width" />
+		<title></title>
+		<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/spacelab/bootstrap.min.css" rel="stylesheet" />
+	</head>
+<body>
+<div class="container">
+	<h3>基本用法</h3>
+	<div class="input-group" style="width: 200px;">
+		<span class="input-group-addon">@</span>
+		<!--form-control 占满全屏-->
+		<input type="text" class="form-control" />
+		<span class="input-group-addon">.00</span>
+	</div>
+	<hr />
+	<div class="input-group input-group-lg">
+		<span class="input-group-addon glyphicon glyphicon-tower"></span>
+		<input type="text" class="form-control" />
+	</div>
+	
+		<hr />
+	<div class="input-group input-group-sm">
+		<span class="input-group-addon glyphicon glyphicon-user"></span>
+		<input type="text" class="form-control" />
+	</div>
+	
+	<hr/>
+	<!--单选框作为addon-->
+		<div class="input-group input-group-sm">
+		<span class="input-group-addon">
+			<input type="checkbox" />
+		</span>
+		<input type="text" class="form-control" />
+	</div>
+	
+	<hr/>
+	<!--按钮做成addon 注意span的样式为nput-group-btn-->
+			<div class="input-group input-group-sm">
+		<span class="input-group-btn">
+			<button type="button" class="btn btn-info">OK</button>
+		</span>
+		<input type="text" class="form-control" />
+	</div>
+	
+	<hr />
+	<!--按钮结合下拉菜单-->
+	<div class="input-group">
+		<div class="input-group-btn">
+			<button type="button" class="btn btn-default dropdown-toggle"
+				data-toggle="dropdown">
+				Action
+				<span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu">
+				<li><a href="#">项目</a></li>
+				<li><a href="#">项目</a></li>
+				<li><a href="#">项目</a></li>
+				<li><a href="#">项目</a></li>
+			</ul>
+		</div>
+		<input type="text" class="form-control" />
+	</div>
+	
+	
+</div>
+</body>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</html>
