@@ -37,7 +37,7 @@ var insertTodo = function(todo) {
     var todoCell = todoTemplate(todo)
     // 插入 todo-list
     var todoList = e('.todo-list')
-    todoList.insertAdjacentHTML('beforeend', todoCell)
+    todoList.insertAdjacentHTML('beforeend',todoCell)
 }
 
 var b = e('#id-button-add')
