@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <mycom1></mycom1>
+    </div>
+
+
+    <script>
+    Vue.component("mycom1",{
+        template:'<h1>全局组件 {{msg}}</h1>',
+
+        // 组件中的data必须是一个回调函数，而不仅仅是一个data对象
+        data:function(){
+            // alert('组件回调函数中');
+            return {
+                msg:'组件中的data'
+            }
+        }
+    })
+
+    var vm =new Vue({
+        el:"#app",
+        data:{
+
+        }
+    })    
+    </script>
+</body>
+</html>
