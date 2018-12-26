@@ -53,7 +53,7 @@
     </nav>
     <!-- 列表主体模块 -->
     <div class="content-scrollable list-items">
-      <div v-for="(item,index) in items">
+      <div v-for="(item,index) in items" :key="index">
         <item :item="item" :index="index" :id="todo.id" :init="init" :locked="todo.locked"></item>
       </div>
     </div>
