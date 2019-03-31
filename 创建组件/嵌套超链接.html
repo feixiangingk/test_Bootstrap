@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <com1></com1>
+    </div>
+    <template id='tmp1'>
+        <div class="accept-container">
+            <p>我是组件com1</p>
+            <div class="go-back" v-show="goBackState" @click="goBack">GoBack</div>
+                <ul>
+                    <li v-for="item in webAddress">
+                    <a :href="item.link" target="showHere" @click="showIframe">{{item.name}}</a>
+                    </li>
+                </ul>
+            <iframe v-show="iframeState" id="show-iframe"  frameborder=0 name="showHere" scrolling=auto src=""></iframe>
+            <!--<iframe src=""></iframe>-->
+        </div>
+    </template>
+<script>
+
+    var com1 = {
+        template:'#tmp1',
+        data(){
+            return{
+                msg:"",
+                iframeState:false,
+                goBackState:false,
+                webAddress: [
+                    {
+                        name:'segmentFault',
+                        link:'https://segmentfault.com/a/1190000004502619'
+                    },
+                    {
+                        name:'博客',
+                        link:'http://vuex.vuejs.org/'
+                    },
+                    {
+                        name:'特效',
+                        link:'http://www.yyyweb.com/377.html'
+                    },
+                    {
+                        name:"本地HTML",
+                        link:'http://localhost:5000/static/html/index.html'
+                    },
+                ]
+            }
+        },
+        mounted() {
+            const oIframe = document.getElementById('show-iframe');
+            const deviceWidth = document.documentElement.clientWidth;
+            const deviceHeight = document.documentElement.clientHeight;
+            oIframe.style.width = deviceWidth + 'px';
+            oIframe.style.height = deviceHeight + 'px';
+        },
+        methods: {
+            goBack(){
+                this.goBackState = false;
+                this.iframeState = false;
+            },
+            showIframe(){
+                this.goBackState = true;
+                this.iframeState = true;
+            }
+        },
+    }
+
+    var vm = new Vue({
+        el:'#app',
+        data:{
+
+        },
+        components:{
+            com1:com1,
+        }
+    })
+</script>
+</body>
+</html>

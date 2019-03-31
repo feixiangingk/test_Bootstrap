@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h3>app组件</h3>
+        <com1></com1>
+        <com2></com2>
+
+    </div>
+
+    <template id="temp1">
+        <div>
+        <h3>com1组件</h3>
+        <input  v-model="msg"></input>
+        <button @click="pushargs" v-model='msg'>传值</button>
+        </div>
+    </template>
+
+    <template id="temp2">
+            <div>
+            <h3>com2组件</h3>
+            <input type="text"  v-model="msg2">接受值</input>
+            </div>
+        </template>
+
+    <script>
+    const bus = new Vue();
+    var com1 ={
+        template:"#temp1",
+        data(){
+            return{
+                msg:"我是组件1"
+            }
+        },
+        methods: {
+            pushargs(event){
+                console.log(this.msg);
+                this.$root.bus.$emit('send',this.msg)
+                // bus.$emit('send',this.msg)
+            }
+        },
+    }
+
+    var com2 ={
+        template:"#temp2",
+        data(){
+            return{
+                msg2:"com2初始值",
+            }
+        },
+        methods: {},
+        created() {
+            // bus.$on('send',(msg)=>{
+            //     this.msg2=msg
+            // })
+            this.$root.bus.$on('send',(msg)=>{
+                this.msg2 = msg
+            })
+        },
+    }
+
+
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            bus
+        },
+        methods: {},
+        components:{
+            com1:com1,
+            com2:com2,
+        }
+    })
+    </script>
+</body>
+</html>

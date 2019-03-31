@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+            <!-- fatherattr为属性绑定  @ftsfunc为方法绑定 -->
+        <p>父组件显示：{{man.name}}</p>
+        <com2 :fatherattr="msg"  @ftsfunc="show"></com2>
+    </div>
+
+    <template id="tmp1">
+        <div>
+            <h3>这是子组件--{{ fatherattr }}</h3>
+            <input type="button" value="子组件的方法" @click="childclick">
+            <br>
+
+            <input type="button" value="子组件调用父组件的方法" @click="useclick">
+        </div>
+    </template>
+
+    <script>
+    var com2= {
+        template: '#tmp1',
+        // 通过props父组件向子组件传值
+        props:['fatherattr'],
+        methods: {
+            childclick(event){
+                // 捕获事件点击的元素
+                console.log(event.target);
+                return "ok"
+            },
+            useclick(){
+                // 通过emit方法调用父组件传递过来的方法  后面可接参数
+                this.$emit("ftsfunc","abc",{"name":"谷帆","age":32})
+            }
+            
+        },
+    }
+
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            msg:'父组件内容',
+            man:{'name':null,'age':null},
+        },
+        methods: {
+            show(data,data2){
+                console.log("父组件方法给子组件用"+data,data2);
+                this.man = data2;
+            }
+        },
+        components:{
+            // 这是局部组件定义方式
+            com2:com2,
+        },
+    })
+    </script>
+</body>
+</html>
